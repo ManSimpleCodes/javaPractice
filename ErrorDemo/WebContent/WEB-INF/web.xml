@@ -1,0 +1,38 @@
+<web-app>
+<servlet>
+<servlet-name>ms</servlet-name>
+<servlet-class>Myservlet1</servlet-class>
+	<init-param>
+	<param-name>driver</param-name>
+	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+	</init-param>
+	
+	<init-param>
+	<param-name>url</param-name>
+	<param-value>jdbc:oracle:thin:@localhost:1522:manuorcl</param-value>
+	</init-param>
+	
+	<init-param>
+	<param-name>username</param-name>
+	<param-value>jdbc</param-value>
+	</init-param>
+	
+	<init-param>
+	<param-name>password</param-name>
+	<param-value>jdbc</param-value>
+	</init-param>
+	
+</servlet>
+<servlet-mapping>
+<servlet-name>ms</servlet-name>
+<url-pattern>/ms</url-pattern>
+</servlet-mapping>
+<filter>
+<filter-name>md</filter-name>
+<filter-class>FilterError</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>md</filter-name>
+<url-pattern>/ms</url-pattern>
+</filter-mapping>
+</web-app>
